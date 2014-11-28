@@ -5,6 +5,7 @@ var bio = {
 	"name": "James Tench",
 	"role": "Web Developer",
 	"contacts": {
+		"location": "Cleveland, OH",
 		"email": "tenchjames@gmail.com",
 		"mobile": "216-571-4151",
 		"github": "tenchjames.github.io",
@@ -261,6 +262,7 @@ bio.display();
 work.display();
 education.display();
 //project.display();
+$("#mapdiv").append(googleMap);
 
 $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
