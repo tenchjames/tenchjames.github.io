@@ -262,7 +262,7 @@ bio.display();
 work.display();
 education.display();
 //project.display();
-$("#mapdiv").append(googleMap);
+$("#mapDiv").append(googleMap);
 
 $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
