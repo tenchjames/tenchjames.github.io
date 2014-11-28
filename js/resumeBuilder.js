@@ -57,9 +57,9 @@ var work = {
 				"residential customer accounts. In my role I provide reporting and analytics to the entire field. " +
 				"I develop the code for multiple web applications that the field utilizes on a daily basis. I primarily develop " +
 				"with ASP.NET in C#. I also support an application that I developed with ColdFusion. I do both the front end " +
-				"web development work for the sites, and the backend SQL. On a daily basis I extract data from an Oracle Data Warehouse, " +
-				"aggregate and transform the data to be presented to the field. I have been programming and building applications " +
-				"since 2004. Two of the applications developed between 2006 and 2007 are still in full production mode, " +
+				"web development work for the sites, and the backend SQL. On a daily basis I extract, aggregate, " +
+			    "and transform data from an Oracle Data Warehouse that is then used for custom reporting. I have been programming and building applications " +
+				"since 2004. Two of the applications developed between 2006 and 2007 are still in full production mode " +
 			    "and used by thousands of employees daily."
 		},
 		{
@@ -67,7 +67,7 @@ var work = {
 			"years": "2006 - 2014",
 			"location": "Cleveland, OH 44114",
 			"title": "Center Sales Manager",
-			"description": "As a Center Sales Manager I led the day to day operation of a large call center with over 300 employees. " +
+			"description": "As a Center Sales Manager I led the day to day operations of a large call center with over 300 employees. " +
 			"I was responsible for ensuring each Manager and Service Representative met all targets. To do this I managed multiple " +
 			"aspects of the business including: hiring, training, Union relationships, attendance, performance accountability, " +
 			"rewards and recognition. I hired over 200 Service Representatives, and promoted 11 Sales Coach Managers during my role as " + 
