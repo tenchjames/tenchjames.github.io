@@ -26,6 +26,9 @@ var bio = {
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 		var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 		var formattedGitHub = HTMLgithub.replace("%data%",bio.contacts.github);
+		var linkedInApi = "<script src='//platform.linkedin.com/in.js' type='text/javascript'></script>";
+		linkedInApi += "<script type='IN/MemberProfile' data-id='https://www.linkedin.com/pub/james-tench/55/b90/445' ";
+		linkedInApi += "data-format='hover' data-text='James Tench'></script>";
 
 		$("#topContacts").append(formattedMobile);
 		$("#topContacts").append(formattedEmail);
@@ -43,6 +46,7 @@ var bio = {
 		}
 		$("#footerContacts").append(formattedEmail);
 		$("#footerContacts").append(formattedMobile);
+		$("#footerContacts").append(linkedInApi);
 	}
 }
 
