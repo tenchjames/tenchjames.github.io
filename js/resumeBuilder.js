@@ -55,7 +55,7 @@ var work = {
 			"title": "Sr. Centers Technology Support Manager",
 			"description": "As a Sr. Centers Technology Support Manager I support the Home Solutions team at AT&T. The team handles " +
 				"residential customer accounts. In my role I provide reporting and analytics to the entire field. " +
-				"I develop the code for multiple web applications that the field uses on a daily basis. I primarily develop " +
+				"I develop the code for multiple web applications that the field utilizes on a daily basis. I primarily develop " +
 				"with ASP.NET in C#. I also support an application that I developed with ColdFusion. I do both the front end " +
 				"web development work for the sites, and the backend SQL. On a daily basis I extract data from an Oracle Data Warehouse, " +
 				"aggregate and transform the data to be presented to the field. I have been programming and building applications " +
