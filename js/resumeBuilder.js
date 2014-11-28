@@ -15,7 +15,7 @@ var bio = {
 	"pictureurl": "images/profile.jpg",
 	"skills": skills,
 	"welcome": "Welcome to my bio page. I am a Web Developer located in Cleveland Ohio. I " +
-		"work for AT&T supporting an organization 20,000+ employees. I do both the front end "+
+		"work for AT&T supporting an organization of 20,000+ employees. I do both the front end "+
 		"Web Development and the backend SQL.\n\n"+
 		"I am also a Graduate Student at Cleveland State University working on my Masters Degree in Computer Information Systems.",
 	"display": function() {
@@ -53,7 +53,7 @@ var work = {
 			"years": "2014 - current",
 			"location": "Brecksville, OH 44141",
 			"title": "Sr. Centers Technology Support Manager",
-			"description": "As Sr. Centers Technology Support Manager I support the Home Solutions team at AT&T. The team handles " +
+			"description": "As a Sr. Centers Technology Support Manager I support the Home Solutions team at AT&T. The team handles " +
 				"residential customer accounts. In my role I provide reporting and analytics to the entire field. " +
 				"I develop the code for multiple web applications that the field uses on a daily basis. I primarily develop " +
 				"with ASP.NET in C#. I also support an application that I developed with ColdFusion. I do both the front end " +
