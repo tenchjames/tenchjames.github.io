@@ -5,7 +5,7 @@ var bio = {
 	"name": "James Tench",
 	"role": "Web Developer",
 	"contacts": {
-		"location": "Cleveland, OH",
+		"location": "Brunswick, OH 44212",
 		"email": "tenchjames@gmail.com",
 		"mobile": "216-571-4151",
 		"github": "tenchjames.github.io",
@@ -51,7 +51,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"years": "2014 - current",
-			"location": "Cleveland, OH",
+			"location": "Brecksville, OH 44141",
 			"title": "Sr. Centers Technology Support Manager",
 			"description": "As Sr. Centers Technology Support Manager I support the Home Solutions team at AT&T. The team handles " +
 				"residential customer accounts. In my role I provide reporting and analytics to the entire field. " +
@@ -65,7 +65,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"years": "2006 - 2014",
-			"location": "Cleveland, OH",
+			"location": "Cleveland, OH 44114",
 			"title": "Center Sales Manager",
 			"description": "As a Center Sales Manager I led the day to day operation of a large call center with over 300 employees. " +
 			"I was responsible for ensuring each Manager and Service Representative met all targets. To do this I managed multiple " +
@@ -105,7 +105,7 @@ var education = {
 		},
 		{
 			"name": "Cleveland State University",
-			"location": "Cleveland OH",
+			"location": "2121 Euclid Ave, Cleveland OH 44115",
 			"degree": "Masters",
 			"majors": ["Computer Information Systems"],
 			"dates": "2013 - Current",
