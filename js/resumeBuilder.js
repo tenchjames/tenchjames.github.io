@@ -72,7 +72,7 @@ var work = {
 			"aspects of the business including: hiring, training, Union relationships, attendance, performance accountability, " +
 			"rewards and recognition. I hired over 200 Service Representatives, and promoted 11 Sales Coach Managers during my role as " + 
 			"Center Sales Manager. " + 
-			"I coordinated and conducted daily sales meetings to consistently kept the team driven to achieve results. " +
+			"I coordinated and conducted daily sales meetings to consistently keep the team driven to achieve results. " +
 			"I achieved best in class adjustments per customer rate out of over 40 call centers in the organization."
 		}
 	],
