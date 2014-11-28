@@ -26,9 +26,12 @@ var bio = {
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 		var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 		var formattedGitHub = HTMLgithub.replace("%data%",bio.contacts.github);
-		var linkedInApi = "<script src='//platform.linkedin.com/in.js' type='text/javascript'></script>";
-		linkedInApi += "<script type='IN/MemberProfile' data-id='https://www.linkedin.com/pub/james-tench/55/b90/445' ";
-		linkedInApi += "data-format='hover' data-text='James Tench'></script>";
+		var linkedInApi = "<a href='http://www.linkedin.com/pub/james-tench/55/b90/445' target='_blank'>";
+		linkedInApi += "<img src='https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png' width='160' ";
+		linkedInApi += "height='33' border='0' alt='View James Tench profile on LinkedIn'></a>";
+		var gitHub = "<a href='https://github.com/tenchjames' target='_blank'>";
+		gitHub += "<img src='images/github-logo.png' height='33' border='0' alt='James Tench GitHub'></a>";
+
 
 		$("#topContacts").append(formattedMobile);
 		$("#topContacts").append(formattedEmail);
@@ -46,7 +49,8 @@ var bio = {
 		}
 		$("#footerContacts").append(formattedEmail);
 		$("#footerContacts").append(formattedMobile);
-		$("#footerContacts").append(linkedInApi);
+		$("#socialMediaContacts").append(linkedInApi);
+		$("#socialMediaContacts").append(gitHub);
 	}
 }
 
