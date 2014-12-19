@@ -7,11 +7,66 @@
 	<meta name="author" content="James Tench">
 	<title>James Tench Portfolio</title>
 
-	
+	<!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/print.css" rel="stylesheet">
+
+
+	<script>
+		(function(w,g){w['GoogleAnalyticsObject']=g;
+			w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+		// TODO: replace with your Google Analytics profile ID.
+		ga('create', 'UA-XXXX-Y');
+		ga('send', 'pageview');
+	</script>
+	<script src="http://www.google-analytics.com/analytics.js"></script>
+	<script async src="js/perfmatters.js"></script>
 </head>
+
 <body>
+	<header>
+		<a href="/"><img src="img/profile-min.jpg"></a>
+		<p>James Tench<br><span>Web Developer</span></p>
+	</header>
 
+	<div class="container">
+		<div class="hero">
+			<p>
+				Thanks for visiting my portfolio page. Please feel free to check out some of the projects I have worked on.
+				I enjoy coding in general. I am a big fan of learning new things too.
+				I do web development at <a target="_blank" href="http://www.att.com/">AT&T </a> for some intranet websites,
+				so I can't post most of that stuff. However, I have completed projects from other courses via sites like
+				<a target="_blank" href="https://www.udacity.com/">Udacity</a>,
+				<a target="_blank" href="http://teamtreehouse.com/">Treehouse</a>,
+				<a target="_blank" href="https://www.codeschool.com">Code School</a>,
+				and <a target="_blank" href="http://www.pluralsight.com/">Pluralsight</a>.
+			</p>
+			<p>Contact me at tenchjames@gmail.com</p>
+		</div>
 
+		<div class="content">
+			<ul>
+				<li>
+					<img src="img/myfrogger-medium.png"  alt="frogger game image">
+					<a href="project-frogger.html">Frogger Like Game</a>
+					<p>This is my version of this game from the Object Oriented JavaScript course at Udacity</p>
+				</li>
 
+				<li>
+					<img src="img/companysearch-medium.png" alt="company search project">
+					<a href="project-company.html">PHP Search</a>
+					<p>Implementing database connections isn't so hard...</p>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
+	</footer>
 </body>
 </html>
