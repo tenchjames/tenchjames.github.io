@@ -478,7 +478,7 @@ window.performance.mark("mark_start_generating"); // collect timing data
 // This for-loop actually creates and appends all of the pizzas when the page loads
 var pizzaFrag = document.createDocumentFragment();
 for (var i = 2; i < 100; i++) {
-  pizzaFrag.appendChild(pizzaElementGenerator(i))
+  pizzaFrag.appendChild(pizzaElementGenerator(i));
 }
 randomPizzas.appendChild(pizzaFrag);
 
@@ -576,8 +576,6 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     items.push(elem);
-    //docFrag.appendChild(elem);
   }
-  //movingPizzas1.appendChild(docFrag);
   updatePositions();
 });
