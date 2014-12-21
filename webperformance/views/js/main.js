@@ -378,9 +378,9 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer = document.createElement("div");
 
   pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
   pizzaContainer.style.height = "325px";
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
+  pizzaContainer.classList.add("col-md-4");       // added and removed 33% inline style
   pizzaImageContainer.classList.add("col-md-6");
 
   pizzaImage.src = "images/pizza.png";
@@ -536,14 +536,20 @@ function updatePositions() {
   // only redraw visible pizzas
   // calculate the visible rows * 8 per row
   redrawNumber = Math.ceil(window.innerHeight / 256) * 8;
-
   while (movingPizzas1.lastChild) {
     movingPizzas1.removeChild(movingPizzas1.lastChild);
   }
+var transform;
 
   for (var i = 0; i < redrawNumber; i++) {
     phase = Math.sin((currentScrollY / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    transform = items[i].basicLeft + 100 * phase;
+    // using css transform avoids a new layout compared to changing
+    // the left property each time this function is called.
+    items[i].style.webkitTransform = 'translate(' + transform + 'px, 0)';
+    items[i].style.mozTransform = 'translate(' + transform + 'px, 0)';
+    items[i].style.oTransform = 'translate(' + transform + 'px, 0)';
+    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     newPizzasFrag.appendChild(items[i]);
   }
 
@@ -591,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < 200; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "images/pizza.png";
+    elem.src = "images/pizza-100x77.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
