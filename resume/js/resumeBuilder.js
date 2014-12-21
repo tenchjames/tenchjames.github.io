@@ -22,7 +22,7 @@ var bio = {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-		var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureurl)
+		var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureurl);
 		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 		var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 		var formattedGitHub = HTMLgithub.replace("%data%",bio.contacts.github);
@@ -52,7 +52,7 @@ var bio = {
 		$("#socialMediaContacts").append(linkedInApi);
 		$("#socialMediaContacts").append(gitHub);
 	}
-}
+};
 
 var work = {
 	"jobs": [
@@ -230,7 +230,7 @@ var education = {
 				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 				var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 				var formattedOnlineTitleSchoolName = formattedOnlineTitle + formattedOnlineSchoolName;
-				formattedOnlineTitleSchoolName = formattedOnlineTitleSchoolName.replace("%onlineCourseUrl%", education.onlineCourses[course].url)
+				formattedOnlineTitleSchoolName = formattedOnlineTitleSchoolName.replace("%onlineCourseUrl%", education.onlineCourses[course].url);
 				$(".education-entry:last").append(formattedOnlineTitleSchoolName);
 				$(".education-entry:last").append(formattedOnlineDates);
 				//$(".education-entry:last").append(formattedOnlineURL); added this to course link
@@ -254,7 +254,7 @@ var project = {
 	],
 	"display": function() {
 		for (proj in project.projects) {
-			$("#projects").append(HTMLprojectStart)
+			$("#projects").append(HTMLprojectStart);
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.projects[proj].title);
 			var formattedProjectDates = HTMLprojectDates.replace("%data%",project.projects[proj].dates);
 			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.projects[proj].description);
@@ -263,7 +263,7 @@ var project = {
 			$(".project-entry:last").append(formattedProjectDescription);		
 		}
 	}
-}
+};
 
 
 bio.display();
@@ -283,7 +283,7 @@ var inName = function(name) {
 	var lname = names[1].toUpperCase();
 
 	return fname + " " + lname;
-}
+};
 
 $("#main").append(internationalizeButton);
 

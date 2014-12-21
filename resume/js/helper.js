@@ -39,7 +39,7 @@ var HTMLschoolName = "<a href='#'>%data%";
 var HTMLschoolDegree = " -- %data%</a>";
 var HTMLschoolDates = "<div class='date-text'>%data%</div>";
 var HTMLschoolLocation = "<div class='location-text'>%data%</div>";
-var HTMLschoolMajor = "<em><br>Major: %data%</em>"
+var HTMLschoolMajor = "<em><br>Major: %data%</em>";
 
 var HTMLonlineClasses = "<h3>Online Classes</h3>";
 var HTMLonlineTitle = "<a href='%onlineCourseUrl%'>%data%";
@@ -57,7 +57,7 @@ $(document).ready(function() {
     var iName = inName() || function(){};
     $('#name').html(iName);  
   });
-})
+});
 
 
 
@@ -200,7 +200,7 @@ function initializeMap() {
       // the search request object
       var request = {
         query: locations[place]
-      }
+      };
 
       // Actually searches the Google Maps API for location data and runs the callback 
       // function with the search results after each search.
@@ -217,9 +217,8 @@ function initializeMap() {
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
   pinPoster(locations);
-  
-};
 
+}
 /*
 Uncomment all the code below when you're ready to implement a Google Map!
 */
