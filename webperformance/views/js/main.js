@@ -512,6 +512,8 @@ var items = []
 // Moves the sliding background pizzas based on scroll position
 
 function updatePositions() {
+  ticking = false;
+  var currentScrollY = latestKnownScrollY;
   frame++;
   window.performance.mark("mark_start_frame");
 
@@ -522,14 +524,15 @@ function updatePositions() {
   //}
 
   // new loop - original method was 40 - 45 ms
-  // new loop does in 1ms because layout is delayed until all elements
+  // new loop does in < 1ms because layout is delayed until all elements
   // are added and we only update visible elements
   // since repaint happens after new styles added
   // first remove img elements, then update style
   // and add to doc fragment...add that back to dom in one shot
   var newPizzasFrag = document.createDocumentFragment(),
       phase,
-      redrawNumber;
+      redrawNumber,
+      scrollTop;
   // only redraw visible pizzas
   // calculate the visible rows * 8 per row
   redrawNumber = Math.ceil(window.innerHeight / 256) * 8;
@@ -537,8 +540,9 @@ function updatePositions() {
   while (movingPizzas1.lastChild) {
     movingPizzas1.removeChild(movingPizzas1.lastChild);
   }
+
   for (var i = 0; i < redrawNumber; i++) {
-    phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    phase = Math.sin((currentScrollY / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     newPizzasFrag.appendChild(items[i]);
   }
@@ -557,9 +561,26 @@ function updatePositions() {
   }
 }
 
+// from html5 rocks so we can track the y position
+// without causing a reflow every time updatePositions
+// uses window.scrollY
+var latestKnownScrollY = 0,
+    ticking = false;
+
+function onScroll() {
+  latestKnownScrollY = window.pageYOffset;
+  requestTick();
+}
+
+function requestTick() {
+  if(!ticking) {
+    requestAnimationFrame(updatePositions);
+  }
+  ticking = true;
+}
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', onScroll);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
