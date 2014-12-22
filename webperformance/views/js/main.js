@@ -18,7 +18,7 @@
 /* globals called more than time, so let's cache em */
 var randomPizzas = document.getElementById("randomPizzas"),
     movingPizzas1 = document.querySelector("#movingPizzas1"),
-    backPizza = new Image(); // get the pizza image loading
+    backPizza = new Image(); // used to clone image elements
 
 backPizza.className = 'mover';
 backPizza.src = "images/pizza-100x77.png";
@@ -389,7 +389,7 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.classList.add("randomPizzaContainer");
   pizzaContainer.style.height = "325px";
   pizzaContainer.id = "pizza" + i; // gives each pizza element a unique id
-  pizzaContainer.classList.add("col-md-4"); // added and removed 33% inline style
+  pizzaContainer.style.width = "33.33%";
   pizzaImageContainer.classList.add("col-md-6");
 
   pizzaImage.src = "images/pizza.png";
@@ -466,12 +466,24 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
 
     var randPizzaContainers = document.querySelectorAll(".randomPizzaContainer"),
-        randPizzaContainersLen = randPizzaContainers.length;
-    for (var i = 0; i < randPizzaContainersLen; i++) {
-      var dx = determineDx(randPizzaContainers[i], size);
-      var newwidth = (randPizzaContainers[i].offsetWidth + dx) + 'px';
-      randPizzaContainers[i].style.width = newwidth;
-    }
+        randPizzaContainersLen = randPizzaContainers.length,
+        randomPizzaClone = randomPizzas.cloneNode(true),
+        randomCloneChildren = randomPizzaClone.children,
+        randomCloneLen = randomCloneChildren.length;
+
+      for (var i = 0; i < randomCloneLen; i += 1) {
+          var dx = determineDx(randomCloneChildren[i], size);
+          var newwidth = (randomCloneChildren[i].offsetWidth + dx) + 'px';
+          randomCloneChildren[i].style.width = newwidth;
+      }
+
+      randomPizzas.parentNode.replaceChild(randomPizzaClone, randomPizzas);
+      randomPizzas = document.getElementById("randomPizzas");
+    //for (var i = 0; i < randPizzaContainersLen; i++) {
+    //  var dx = determineDx(randPizzaContainers[i], size);
+    //  var newwidth = (randPizzaContainers[i].offsetWidth + dx) + 'px';
+    //  randPizzaContainers[i].style.width = newwidth;
+    //}
   }
 
   changePizzaSizes(size);
@@ -559,7 +571,6 @@ function updatePositions() {
     items[i].style.webkitTransform = 'translate(' + transform + 'px, 0)';
     items[i].style.mozTransform = 'translate(' + transform + 'px, 0)';
     items[i].style.oTransform = 'translate(' + transform + 'px, 0)';
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     newPizzasFrag.appendChild(items[i]);
   }
 
