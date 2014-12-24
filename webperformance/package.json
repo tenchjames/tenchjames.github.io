@@ -1,17 +1,12 @@
 {
-  "name": "siteoptimization",
-  "version": "1.0.0",
-  "description": "Udacity project to optimize site",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "James Tench",
-  "license": "ISC",
+  "name": "udacity",
+  "version": "0.1.0",
   "devDependencies": {
-  	"grunt" "-0.4.5",
-  	"grunt-contrib-jshint": "~0.10.0",
-  	"grunt-contrib-nodeunit": "~0.4.1",
-  	"grunt-contrib-uglify": "~0.5.0"
+    "grunt": "~0.4.5",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0"
   }
 }

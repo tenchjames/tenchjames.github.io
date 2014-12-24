@@ -32,7 +32,7 @@ form {
 .mover {
   position: fixed;
   width: 256px;
-  opacity: 0.2;
+  z-index: -1;
 }
 
 .randomPizzaContainer {
