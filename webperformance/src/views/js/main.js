@@ -530,7 +530,6 @@ var resizePizzas = function(size) {
     console.log("Time to resize pizzas: " + timeToResize[0].duration + "ms");
 };
 
-
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
@@ -540,14 +539,13 @@ for (var i = 2; i < 100; i++) {
 }
 randomPizzas.appendChild(pizzaFrag);
 
-
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
 window.performance.mark("mark_end_generating");
 window.performance.measure("measure_pizza_generation", "mark_start_generating", "mark_end_generating");
 var timeToGenerate = window.performance.getEntriesByName("measure_pizza_generation");
 console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "ms");
 
-// set initial values to be used if rezize pizza is called.
+// set initial values to be used if resize pizza is called.
 pizzaContainerOffsetWidth = randomPizzaOffsetWidth * 0.3333;
 // Iterator for number of times the pizzas in the background have scrolled.
 // Used by updatePositions() to decide when to log the average time per frame
@@ -578,12 +576,6 @@ function updatePositions() {
     frame++;
     window.performance.mark("mark_start_frame");
 
-    //for (var i = 0; i < 200; i++) {
-    //  var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    //  items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    //
-    //}
-
     // new loop - original method was 40 - 45 ms
     // new loop does in < 1ms because layout is delayed until all elements
     // are added and we only update visible elements
@@ -592,31 +584,31 @@ function updatePositions() {
     // and add to doc fragment...add that back to dom in one shot
     var newPizzasFrag = document.createDocumentFragment(),
         phase,
-        redrawNumber,
-        scrollTop;
+        redrawRows,
+        redrawCols;
     // only redraw visible pizzas
-    // calculate the visible rows * 8 per row
-    redrawNumber = Math.ceil(windowInnerHeight / 256) * 8;
+    redrawRows = Math.ceil(windowInnerHeight / 256);
+    redrawCols = Math.ceil(windowInnerWidth / 256);
 
     while (movingPizzas1.lastChild) {
         movingPizzas1.removeChild(movingPizzas1.lastChild);
     }
-    var transform;
+    var transform, loc;
 
-    for (var i = 0; i < redrawNumber; i++) {
-        phase = Math.sin((currentScrollY / 1250) + (i % 5));
-        transform = items[i].basicLeft + 100 * phase;
-        // using css transform avoids a new layout compared to changing
-        // the left property each time this function is called.
-        items[i].style.webkitTransform = 'translate(' + transform + 'px, 0)';
-        items[i].style.mozTransform = 'translate(' + transform + 'px, 0)';
-        items[i].style.oTransform = 'translate(' + transform + 'px, 0)';
-        newPizzasFrag.appendChild(items[i]);
+    for (var i = 0; i < redrawRows; i += 1) {
+        for (var j = 0; j < redrawCols; j += 1) {
+            loc = i * 8 + j;
+            phase = Math.sin((currentScrollY / 1250) + (loc % 5));
+            transform = items[loc].basicLeft + 100 * phase;
+            // using css transform avoids a new layout compared to changing
+            // the left property each time this function is called.
+            items[loc].style.webkitTransform = 'translate(' + transform + 'px, 0)';
+            items[loc].style.mozTransform = 'translate(' + transform + 'px, 0)';
+            items[loc].style.oTransform = 'translate(' + transform + 'px, 0)';
+            newPizzasFrag.appendChild(items[loc]);
+        }
     }
-
     movingPizzas1.appendChild(newPizzasFrag);
-
-    // end new loop code
 
     // User Timing API to the rescue again. Seriously, it's worth learning.
     // Super easy to create custom metrics.
@@ -627,7 +619,6 @@ function updatePositions() {
         logAverageFrame(timesToUpdatePosition);
     }
 }
-
 
 function onScroll() {
     latestKnownScrollY = window.pageYOffset;

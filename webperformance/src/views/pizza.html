@@ -4,56 +4,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css">
+
     * {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       -box-sizing: border-box;
     }
-
     body {
       font-family: "Trebuchet MS", Helvetica, sans-serif;
       background: black;
+      margin: 0 auto;
     }
-
     input {
       background: grey;
       font-size: 18px;
     }
-
     form {
       display: inline-block;
     }
-
     .centered {
       text-align: center;
     }
-
     #pizzaSize {
       font-weight: 800;
     }
-
     .mover {
       position: fixed;
       width: 256px;
       z-index: -1;
     }
-
     .randomPizzaContainer {
       float: left;
       display: flex;
     }
-
     .randomPizzaContainer:after {
       content: "";
       display: table;
       clear:both;
     }
-
     .container {
       background-color: rgba(240, 60, 60, 0.8);
-
     }
-
     img {
       vertical-align: middle;
     }
@@ -84,7 +75,6 @@
         width: 1170px;
       }
     }
-
     .row {
       margin-left: -15px;
       margin-right: -15px;
@@ -95,7 +85,6 @@
       padding-left: 15px;
       padding-right: 15px;
     }
-
     @media (min-width: 992px) {
       .col-md-4, .col-md-6, .col-md-8, .col-md-12 {
         float: left;
@@ -166,7 +155,7 @@
 
     <div id="callToAction" class="row">
       <div class="col-md-4">
-        <img src="images/pizzeria-720.jpg" class="img-responsive"> <!-- Image credit to: http://commons.wikimedia.org/wiki/File:HK_TST_night_%E5%98%89%E8%98%AD%E9%81%93_Granville_Road_restaurant_Paisano's_Pizzeria_pizza_Dec-2013.JPG -->
+        <img src="images/pizzeria-360.jpg" class="img-responsive"> <!-- Image credit to: http://commons.wikimedia.org/wiki/File:HK_TST_night_%E5%98%89%E8%98%AD%E9%81%93_Granville_Road_restaurant_Paisano's_Pizzeria_pizza_Dec-2013.JPG -->
       </div>
       <div class="col-md-8">
         <div class="row">
@@ -234,7 +223,6 @@
         <div id="randomPizzas" class="row">
           <div id="pizza0" class="randomPizzaContainer" style="width:33.33%;">
             <div class="col-md-6">
-
               <img src="images/pizza.png" class="img-responsive">
             </div>
             <div class="col-md-6">
@@ -271,7 +259,6 @@
   <div id="movingPizzas1">
   </div>
   <script type="text/javascript" src="js/main.min.js"></script>
-
 </body>
 
 </html>
