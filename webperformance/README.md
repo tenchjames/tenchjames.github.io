@@ -1,4 +1,4 @@
-60 FPS optimizaions done for main.js in the pizza project.
+60 FPS optimizations done for main.js in the pizza project.
 
 The initial project details indicated two major issues causing sub 60 FPS. These were the major items I found:
 
