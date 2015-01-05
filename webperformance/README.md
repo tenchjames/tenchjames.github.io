@@ -23,3 +23,6 @@ Optimizations I made.
 4. I felt it is only really necessary to paint the background pizzs that are visible, so I changed the for loops to only display the pizzas that can fit in the current viewport. In most cases on my mobile tests and on my laptop the new for loops only paint 9 - 12 pizzas vs. the original 200. The processing time per frame for the pizza update was down to about 0.35 milliseconds!
 
 5. I updated the loops that accessed the DOM for properties like length in their tests to use a saved local variable instead of going to the DOM each time. I also noticed that creating \<li>'s via strings was causing the page to have to do extra parsing of html when the pizza was being resized. I used createTextNode to help. In other places I chose to use cloneNode to reduce the time to create a new HTML element.
+
+
+To run the project go to tenchjames.github.io/webperformance/dist/
